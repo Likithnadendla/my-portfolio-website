@@ -137,7 +137,7 @@ export function EducationTimeline() {
       ),
     },
     {
-      title: "2018-2022",
+      title: "2017-2021",
       content: (
         <div>
           <div className="mb-6">
@@ -154,7 +154,7 @@ export function EducationTimeline() {
               </div>
               <div className="flex items-center gap-1">
                 <Calendar className="w-4 h-4" />
-                <span>May 2018 — Apr 2022</span>
+                <span>May 2017 — Apr 2021</span>
               </div>
             </div>
           </div>

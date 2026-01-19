@@ -14,8 +14,8 @@ export default function Home() {
     
     try {
       const link = document.createElement('a');
-      link.href = '/Likith-Nadendla-Resume.docx';
-      link.download = 'Likith-Nadendla-Resume.docx';
+      link.href = '/docs/Likith_Resume_MLOps.pdf';
+      link.download = 'Likith_Resume_MLOps.pdf';
       link.style.display = 'none';
       
       document.body.appendChild(link);
@@ -76,14 +76,14 @@ export default function Home() {
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Dynamic Cloud Technology Engineer with 4+ years of experience in software development, 
-              data analytics, and cloud solutions
+              ML/DevOps Engineer who architects, deploys, and operationalizes secure, 
+              cloud-native machine learning systems at scale
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-600 dark:text-slate-400">
               <div className="flex items-center gap-1">
                 <MapPin size={16} />
-                <span>United States, GA 30067</span>
+                <span> United States </span>
               </div>
               <div className="flex items-center gap-1">
                 <Phone size={16} />
@@ -119,15 +119,6 @@ export default function Home() {
                 Download Resume
               </button>
             </div>
-            
-            <div className="flex justify-center gap-6 mt-8">
-              <a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">
-                <Github size={24} />
-              </a>
-              <a href="#" className="text-slate-600 hover:text-blue-600 transition-colors">
-                <Linkedin size={24} />
-              </a>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -146,9 +137,11 @@ export default function Home() {
               About Me
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              Dynamic Cloud Technology Engineer with over four years of diverse experience in software development, 
-              data analytics, and cloud solutions. Expertise in deploying scalable applications and automating processes 
-              using CI/CD pipelines and Kubernetes, significantly enhancing operational efficiency.
+              ML/DevOps Engineer who architects, deploys, and operationalizes secure, cloud-native machine learning 
+              systems at scale. Experienced in automating pipelines, orchestrating data workflows, and hardening 
+              infrastructure across AWS and Kubernetes environments. Proven ability to optimize inference performance, 
+              instrument observability, and enforce compliance for regulated industries, especially healthcare and 
+              enterprise retail.
             </p>
           </motion.div>
 
@@ -161,9 +154,9 @@ export default function Home() {
               className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg"
             >
               <Code className="w-12 h-12 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Software Development</h3>
+              <h3 className="text-xl font-semibold mb-2">ML Systems Architecture</h3>
               <p className="text-slate-600 dark:text-slate-300">
-                Proficient in Python, JavaScript, C#, and modern frameworks like React.js, Next.js, and Node.js
+                Architecting and deploying secure, cloud-native ML systems with automated pipelines and data workflows
               </p>
             </motion.div>
 
@@ -175,9 +168,9 @@ export default function Home() {
               className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/20 dark:border-slate-700/20"
             >
               <Cloud className="w-12 h-12 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Cloud & DevOps</h3>
+              <h3 className="text-xl font-semibold mb-2">Infrastructure & DevOps</h3>
               <p className="text-slate-600 dark:text-slate-300">
-                Expert in AWS, GCP, Azure with extensive experience in Docker, Kubernetes, and CI/CD automation
+                Hardening infrastructure across AWS and Kubernetes with CI/CD guardrails and infrastructure-as-code
               </p>
             </motion.div>
 
@@ -189,9 +182,9 @@ export default function Home() {
               className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/20 dark:border-slate-700/20"
             >
               <Database className="w-12 h-12 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Data Analytics</h3>
+              <h3 className="text-xl font-semibold mb-2">Compliance & Monitoring</h3>
               <p className="text-slate-600 dark:text-slate-300">
-                Skilled in BigQuery, MySQL, machine learning with TensorFlow, and data pipeline optimization
+                Enforcing compliance for healthcare and retail with comprehensive observability and monitoring systems
               </p>
             </motion.div>
           </div>
@@ -216,93 +209,91 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { 
-                title: "Cloud", 
+                title: "AWS & MLOps Platforms", 
                 skills: [
-                  { name: "AWS", logo: "/logos/aws_light.svg" },
-                  { name: "GCP", logo: "/logos/google-cloud.svg" },
-                  { name: "Azure", logo: "/logos/azure.svg" },
-                  { name: "DigitalOcean", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/digitalocean/digitalocean-original.svg" },
-                  { name: "IBM Cloud", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ibm/ibm-original.svg" }
+                  { name: "AWS SageMaker", logo: "/logos/aws_light.svg" },
+                  { name: "AWS Step Functions", logo: "/logos/aws_light.svg" },
+                  { name: "AWS Lambda", logo: "/logos/aws_light.svg" },
+                  { name: "MLflow", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+                  { name: "Kubeflow", logo: "/logos/kubernetes.svg" },
+                  { name: "DVC", logo: "https://img.icons8.com/color/48/git.png" }
                 ]
               },
               { 
-                title: "Programming", 
+                title: "Programming Languages", 
                 skills: [
                   { name: "Python", logo: "/logos/python.svg" },
-                  { name: "JavaScript", logo: "/logos/javascript.svg" },
-                  { name: "Node.js", logo: "/logos/nodejs.svg" },
-                  { name: "Golang", logo: "/logos/golang.svg" },
-                  { name: "Kotlin", logo: "/logos/kotlin.svg" },
                   { name: "Bash", logo: "/logos/bash.svg" },
-                  { name: "R", logo: "/logos/r.svg" },
-                  { name: "MATLAB", logo: "/logos/matlab.svg" }
+                  { name: "SQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+                  { name: "YAML", logo: "https://img.icons8.com/color/48/source-code.png" },
+                  { name: "JSON", logo: "https://img.icons8.com/color/48/json.png" },
+                  { name: "HCL", logo: "/logos/terraform.svg" }
                 ]
               },
               { 
-                title: "Frameworks & APIs", 
+                title: "Data Pipelines & Orchestration", 
                 skills: [
-                  { name: "Next.js", logo: "/logos/nextjs_icon_dark.svg" },
-                  { name: "FastAPI", logo: "/logos/fastapi.svg" },
-                  { name: "Flask", logo: "/logos/flask-wordmark-light.svg" },
-                  { name: "GraphQL", logo: "/logos/graphql.svg" },
-                  { name: "OpenAPI", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openapi/openapi-original.svg" },
-                  { name: "REST API", logo: "https://img.icons8.com/color/48/api-settings.png" },
-                  { name: "Android", logo: "/logos/android-icon.svg" }
+                  { name: "Apache Airflow", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" },
+                  { name: "Great Expectations", logo: "https://img.icons8.com/color/48/checkmark.png" },
+                  { name: "Apache Kafka", logo: "/logos/apache-kafka-wordmark-light.svg" },
+                  { name: "AWS Glue", logo: "/logos/aws_light.svg" },
+                  { name: "dbt", logo: "https://img.icons8.com/color/48/source-code.png" },
+                  { name: "Pandas", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" }
                 ]
               },
               { 
-                title: "Development Tools & Testing", 
+                title: "CI/CD & Observability", 
                 skills: [
-                  { name: "Git", logo: "/logos/git.svg" },
-                  { name: "GitLab", logo: "/logos/gitlab.svg" },
-                  { name: "Vitest", logo: "/logos/vitest.svg" },
-                  { name: "ESLint", logo: "/logos/eslint-wordmark-light.svg" },
-                  { name: "Postman", logo: "/logos/postman.svg" },
-                  { name: "n8n", logo: "/logos/n8n.svg" },
-                  { name: "Atlassian", logo: "/logos/atlassian.svg" }
+                  { name: "GitLab CI/CD", logo: "/logos/gitlab.svg" },
+                  { name: "Datadog", logo: "/logos/datadog.svg" },
+                  { name: "CloudWatch", logo: "/logos/aws_light.svg" },
+                  { name: "Prometheus", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" },
+                  { name: "Grafana", logo: "/logos/grafana.svg" },
+                  { name: "PagerDuty", logo: "https://img.icons8.com/color/48/bell-notification.png" }
                 ]
               },
               { 
                 title: "Databases & Storage", 
                 skills: [
-                  { name: "MySQL", logo: "/logos/mysql-wordmark-light.svg" },
                   { name: "PostgreSQL", logo: "/logos/postgresql.svg" },
-                  { name: "MongoDB", logo: "/logos/mongodb-wordmark-light.svg" },
-                  { name: "Redis", logo: "/logos/redis.svg" },
-                  { name: "MariaDB", logo: "/logos/mariadb.svg" }
+                  { name: "MySQL", logo: "/logos/mysql-wordmark-light.svg" },
+                  { name: "DynamoDB", logo: "/logos/aws_light.svg" },
+                  { name: "OpenSearch", logo: "https://img.icons8.com/color/48/elasticsearch.png" },
+                  { name: "S3", logo: "/logos/aws_light.svg" },
+                  { name: "Redis", logo: "/logos/redis.svg" }
                 ]
               },
               { 
-                title: "DevOps & Monitoring", 
+                title: "Containerization & Orchestration", 
                 skills: [
                   { name: "Docker", logo: "/logos/docker.svg" },
                   { name: "Kubernetes", logo: "/logos/kubernetes.svg" },
+                  { name: "ECS/Fargate", logo: "/logos/aws_light.svg" },
                   { name: "Terraform", logo: "/logos/terraform.svg" },
-                  { name: "Cloudflare", logo: "/logos/cloudflare.svg" },
-                  { name: "Grafana", logo: "/logos/grafana.svg" },
-                  { name: "DataDog", logo: "/logos/datadog.svg" }
+                  { name: "CloudFormation", logo: "/logos/aws_light.svg" },
+                  { name: "Helm", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/helm/helm-original.svg" }
                 ]
               },
               { 
-                title: "Infrastructure & Systems", 
+                title: "Infrastructure & Linux", 
                 skills: [
-                  { name: "Linux", logo: "/logos/linux.svg" },
+                  { name: "Linux Administration", logo: "/logos/linux.svg" },
+                  { name: "NFS/Networking", logo: "https://img.icons8.com/color/48/server.png" },
+                  { name: "SSH/RBAC", logo: "/logos/linux.svg" },
                   { name: "Nginx", logo: "/logos/nginx.svg" },
-                  { name: "Apache Kafka", logo: "/logos/apache-kafka-wordmark-light.svg" },
-                  { name: "Raspberry Pi", logo: "/logos/raspberry_pi.svg" },
-                  { name: "Firebase", logo: "/logos/firebase-wordmark.svg" },
-                  { name: "Supabase", logo: "/logos/supabase.svg" }
+                  { name: "AWS IAM", logo: "/logos/aws_light.svg" },
+                  { name: "AWS Secrets Manager", logo: "/logos/aws_light.svg" }
                 ]
               },
               { 
-                title: "AI & ML Platform", 
+                title: "ML Frameworks & Serving", 
                 skills: [
-                  { name: "Hugging Face", logo: "/logos/hugging_face.svg" },
-                  { name: "MCP", logo: "/logos/model-context-protocol-light.svg" },
+                  { name: "XGBoost", logo: "https://img.icons8.com/color/48/machine-learning.png" },
                   { name: "TensorFlow", logo: "/logos/tensorflow-wordmark-light.svg" },
-                  { name: "Amazon SageMaker", logo: "/logos/aws_light.svg" },
-                  { name: "Azure ML", logo: "/logos/azure.svg" },
-                  { name: "Vertex AI", logo: "/logos/google-cloud.svg" }
+                  { name: "PyTorch", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
+                  { name: "Scikit-learn", logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" },
+                  { name: "TensorFlow Serving", logo: "/logos/tensorflow-wordmark-light.svg" },
+                  { name: "Seldon Core", logo: "/logos/kubernetes.svg" }
                 ]
               }
             ].map((category, index) => (
@@ -414,8 +405,24 @@ export default function Home() {
                 <MapPin className="w-8 h-8 text-blue-600 mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Location</h3>
                 <p className="text-slate-600 dark:text-slate-300">
-                  Georgia, United States
+                  United States
                 </p>
+              </motion.div>
+            </div>
+
+            <div className="flex justify-center mb-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white/20 dark:border-slate-700/20 w-full md:w-1/3"
+              >
+                <Linkedin className="w-8 h-8 text-blue-600 mx-auto mb-4" />
+                <h3 className="font-semibold mb-2">LinkedIn</h3>
+                <a href="https://linkedin.com/in/nadendla-likith" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                  nadendla-likith
+                </a>
               </motion.div>
             </div>
 
@@ -444,17 +451,14 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 bg-slate-900/80 dark:bg-slate-900/90 backdrop-blur-sm text-slate-300 border-t border-white/10 dark:border-slate-700/20">
+      <footer className="py-12 px-4 bg-slate-900/80 dark:bg-slate-900/90 backdrop-blur-sm text-slate-300 border-t border-white/10 dark:border-slate-700/20 relative z-50">
         <div className="max-w-6xl mx-auto text-center">
           <p className="mb-4">© 2025 Likith Nadendla. All rights reserved.</p>
-          <div className="flex justify-center gap-6">
-            <a href="#" className="hover:text-white transition-colors">
-              <Github size={20} />
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+          <div className="flex justify-center gap-6" style={{ position: 'relative', zIndex: 50, pointerEvents: 'auto' }}>
+            <a href="https://linkedin.com/in/nadendla-likith" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-pointer" style={{ zIndex: 50, position: 'relative', pointerEvents: 'auto' }}>
               <Linkedin size={20} />
             </a>
-            <a href="mailto:likith@likith.net" className="hover:text-white transition-colors">
+            <a href="mailto:likith@likith.net" className="hover:text-white transition-colors cursor-pointer" style={{ zIndex: 50, position: 'relative', pointerEvents: 'auto' }}>
               <Mail size={20} />
             </a>
           </div>
