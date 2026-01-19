@@ -87,7 +87,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1">
                 <Phone size={16} />
-                <span>770-687-1382</span>
+                <span>503-454-6925</span>
               </div>
               <div className="flex items-center gap-1">
                 <Mail size={16} />
@@ -390,8 +390,8 @@ export default function Home() {
               >
                 <Phone className="w-8 h-8 text-blue-600 mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Phone</h3>
-                <a href="tel:7706871382" className="text-blue-600 hover:underline">
-                  (770) 687-1382
+                <a href="tel:5034546925" className="text-blue-600 hover:underline">
+                  (503) 454-6925
                 </a>
               </motion.div>
 
