@@ -14,8 +14,8 @@ export default function Home() {
     
     try {
       const link = document.createElement('a');
-      link.href = '/docs/Likith_Resume_MLOps.pdf';
-      link.download = 'Likith_Resume_MLOps.pdf';
+      link.href = '/docs/Likith_MLOps_engineer.pdf';
+      link.download = 'Likith_MLOps_engineer.pdf';
       link.style.display = 'none';
       
       document.body.appendChild(link);
