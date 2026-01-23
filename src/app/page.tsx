@@ -140,8 +140,7 @@ export default function Home() {
             
             <div className="flex justify-center gap-4 mt-8">
               <AnimatedButton
-                onClick={(e) => {
-                  e.preventDefault();
+                onClick={() => {
                   scrollToSection('contact');
                 }}
                 icon={<Mail size={18} />}
