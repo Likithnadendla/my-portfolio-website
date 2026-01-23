@@ -2,15 +2,15 @@
 
 export function FluidShaderBackground() {
   return (
-    <div className="fixed inset-0 z-0 overflow-hidden">
+    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
       {/* Base fluid gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950" />
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950 pointer-events-none" />
       
       {/* Flowing animated layers */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         {/* Large flowing shapes */}
         <div 
-          className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] opacity-30"
+          className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] opacity-30 pointer-events-none"
           style={{
             background: `
               radial-gradient(ellipse 80% 50% at 20% 40%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
@@ -23,7 +23,7 @@ export function FluidShaderBackground() {
         
         {/* Medium flowing shapes */}
         <div 
-          className="absolute -top-1/4 -right-1/4 w-[150%] h-[150%] opacity-20"
+          className="absolute -top-1/4 -right-1/4 w-[150%] h-[150%] opacity-20 pointer-events-none"
           style={{
             background: `
               radial-gradient(ellipse 70% 60% at 60% 30%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
@@ -35,21 +35,21 @@ export function FluidShaderBackground() {
         
         {/* Small floating particles */}
         <div 
-          className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full opacity-40"
+          className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full opacity-40 pointer-events-none"
           style={{
             background: 'radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%)',
             animation: 'drift 15s ease-in-out infinite'
           }}
         />
         <div 
-          className="absolute top-3/4 right-1/3 w-24 h-24 rounded-full opacity-30"
+          className="absolute top-3/4 right-1/3 w-24 h-24 rounded-full opacity-30 pointer-events-none"
           style={{
             background: 'radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%)',
             animation: 'drift 18s ease-in-out infinite reverse'
           }}
         />
         <div 
-          className="absolute top-1/2 left-3/4 w-20 h-20 rounded-full opacity-25"
+          className="absolute top-1/2 left-3/4 w-20 h-20 rounded-full opacity-25 pointer-events-none"
           style={{
             background: 'radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, transparent 70%)',
             animation: 'drift 22s ease-in-out infinite'
@@ -59,7 +59,7 @@ export function FluidShaderBackground() {
       
       {/* Flowing mesh overlay */}
       <div 
-        className="absolute inset-0 opacity-10 dark:opacity-5"
+        className="absolute inset-0 opacity-10 dark:opacity-5 pointer-events-none"
         style={{
           backgroundImage: `
             linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
@@ -72,7 +72,7 @@ export function FluidShaderBackground() {
       
       {/* Subtle noise texture */}
       <div 
-        className="absolute inset-0 opacity-20 dark:opacity-30"
+        className="absolute inset-0 opacity-20 dark:opacity-30 pointer-events-none"
         style={{
           backgroundImage: `
             radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
@@ -86,7 +86,7 @@ export function FluidShaderBackground() {
       />
       
       {/* Final blend overlay */}
-      <div className="absolute inset-0 bg-white/70 dark:bg-slate-900/70" />
+      <div className="absolute inset-0 bg-white/70 dark:bg-slate-900/70 pointer-events-none" />
     </div>
   )
 }

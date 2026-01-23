@@ -220,7 +220,11 @@ export function ExperienceTimeline() {
 
   return (
     <div className="w-full">
-      <Timeline data={data} />
+      <Timeline
+        data={data}
+        title="Professional Journey"
+        description="A timeline of my professional experience and career milestones in cloud technology and software development."
+      />
     </div>
   );
 }
