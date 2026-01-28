@@ -255,12 +255,15 @@ export default function Home() {
                 GitLab CI/CD to deliver reproducible, compliant ML systems.
               </p>
               <p>
-                Recent work: at Nike I built a production personalization platform with embedding pipelines, OpenSearch kNN
-                retrieval, SageMaker real-time endpoints (p95 &lt; 150 ms), feature stores, and staged promotions with canary/
-                shadow deploys plus Datadog and CloudWatch observability. At Core Defender AI I operated a HIPAA-grade ML and
-                analytics platform ingesting HL7, with Airflow and Step Functions pipelines, drift-aware retraining on ECS,
-                MLflow tracking, dataset versioning, and strict PHI isolation with IAM, KMS, private networking, and
-                secrets management.
+                Recent work: at Ayumetrix I designed and built a Python-based AI agent platform on AWS for intelligent
+                decisioning, personalization, and real-time recommendations. I implemented agent-driven workflows for
+                training, inference, feature freshness checks, and automated retraining; built orchestration services
+                across embedding, retrieval, ranking, and response composition; deployed Dockerized services on ECS/
+                SageMaker; and shipped CI/CD with safe rollouts. I integrated IAM, S3, VPC, CloudWatch, and Secrets Manager,
+                established metrics/logs/traces, and defined SLI/SLOs with root-cause analysis on latency and reliability.
+                At Core Defender AI I operated a HIPAA-grade ML and analytics platform ingesting HL7, with Airflow and Step
+                Functions pipelines, drift-aware retraining on ECS, MLflow tracking, dataset versioning, and strict PHI
+                isolation with IAM, KMS, private networking, and secrets management.
               </p>
               <p>
                 Strengths: CI/CD guardrails, IaC, SLI/SLO design, model and data drift detection, feature stores, monitoring
