@@ -13,7 +13,7 @@ export function ExperienceTimeline() {
             <div className="flex items-center gap-2 mb-2">
               <Cloud className="w-5 h-5 text-primary" />
               <h4 className="text-lg font-semibold text-neutral-800 dark:text-neutral-200">
-                ML Ops Engineer — Ayumetrix
+                ML Ops Engineer — Nike
               </h4>
             </div>
             <div className="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400 mb-4">
@@ -30,58 +30,62 @@ export function ExperienceTimeline() {
 
           <div className="mb-4">
             <p className="text-neutral-700 dark:text-neutral-300 text-sm font-semibold mb-3">
-              Designed and built a Python-based AI agent platform on AWS to power intelligent decisioning, personalization, and real-time recommendations at scale. The system focused on agent orchestration, system reliability, and production-grade deployments using containerized services, CI/CD pipelines, and strong observability.
+              Built a production-grade, cloud-native personalization platform on AWS that powers product recommendations, search re-ranking, and homepage personalization using scalable MLOps pipelines, real-time model serving, and enterprise-level CI/CD, monitoring, and security practices.
             </p>
           </div>
 
           <div className="space-y-3 mb-6">
             <div className="flex gap-2 items-start text-neutral-700 dark:text-neutral-300 text-sm">
               <Trophy className="w-4 h-4 mt-1 text-primary flex-shrink-0" />
-              <span>Designed and implemented AI agent–driven workflows in Python to orchestrate offline model training, real-time inference, feature freshness validation, and automated retraining decisions</span>
+              <span>Designed and operated a hybrid personalization system combining offline embedding generation and real-time ranking, supporting product recommendations, search re-ranking, and homepage personalization use cases</span>
             </div>
             <div className="flex gap-2 items-start text-neutral-700 dark:text-neutral-300 text-sm">
               <Trophy className="w-4 h-4 mt-1 text-primary flex-shrink-0" />
-              <span>Built and maintained agent orchestration services that coordinated multiple ML components (embedding generation, candidate retrieval, ranking, and response composition) through well-defined system boundaries</span>
+              <span>Built daily batch pipelines in Amazon SageMaker to train user and product embedding models, storing vectors for scalable candidate retrieval</span>
             </div>
             <div className="flex gap-2 items-start text-neutral-700 dark:text-neutral-300 text-sm">
               <Trophy className="w-4 h-4 mt-1 text-primary flex-shrink-0" />
-              <span>Developed Python-based backend services running in Docker containers, deployed on AWS (ECS/SageMaker), supporting high-throughput, low-latency inference workloads</span>
+              <span>Implemented vector-based candidate generation using OpenSearch kNN, integrating semantic recall with keyword search results for downstream ranking</span>
             </div>
             <div className="flex gap-2 items-start text-neutral-700 dark:text-neutral-300 text-sm">
               <Trophy className="w-4 h-4 mt-1 text-primary flex-shrink-0" />
-              <span>Implemented CI/CD pipelines to build, test, scan, and deploy containerized agent services across multiple environments (dev, staging, prod) with safe rollout strategies</span>
+              <span>Developed real-time ranking services using XGBoost deployed on SageMaker real-time endpoints, meeting internal latency SLOs (p95 &lt; 150 ms)</span>
             </div>
             <div className="flex gap-2 items-start text-neutral-700 dark:text-neutral-300 text-sm">
               <Trophy className="w-4 h-4 mt-1 text-primary flex-shrink-0" />
-              <span>Designed system-level architecture for agent communication, dependency management, and failure of isolation, balancing performance, scalability, and operational simplicity</span>
+              <span>Implemented feature store patterns with SageMaker Feature Store, enabling consistent feature definitions across training and inference paths</span>
             </div>
             <div className="flex gap-2 items-start text-neutral-700 dark:text-neutral-300 text-sm">
               <Trophy className="w-4 h-4 mt-1 text-primary flex-shrink-0" />
-              <span>Integrated AWS services (IAM, S3, VPC, CloudWatch, Secrets Manager) to ensure secure execution of agent workflows and controlled access to model artifacts and features</span>
+              <span>Established Dev → Staging → Prod model promotion pipelines using GitLab CI/CD, including canary and shadow deployments for safe rollout</span>
             </div>
             <div className="flex gap-2 items-start text-neutral-700 dark:text-neutral-300 text-sm">
               <Trophy className="w-4 h-4 mt-1 text-primary flex-shrink-0" />
-              <span>Established comprehensive observability for agent systems, including metrics, logs, and traces to monitor agent execution latency, throughput, error rates, and downstream dependencies</span>
+              <span>Integrated end-to-end observability using Datadog, CloudWatch, and custom metrics to monitor latency, throughput, drift signals, and feature freshness</span>
             </div>
             <div className="flex gap-2 items-start text-neutral-700 dark:text-neutral-300 text-sm">
               <Trophy className="w-4 h-4 mt-1 text-primary flex-shrink-0" />
-              <span>Defined and enforced SLIs/SLOs for critical agent pathways, performing root-cause analysis on latency regressions and reliability issues</span>
+              <span>Implemented data and model drift detection using statistical tests and embedding distribution analysis, enabling proactive retraining decisions</span>
             </div>
             <div className="flex gap-2 items-start text-neutral-700 dark:text-neutral-300 text-sm">
               <Trophy className="w-4 h-4 mt-1 text-primary flex-shrink-0" />
-              <span>Collaborated closely with engineers and a principal-level architect to review designs, make architectural tradeoffs, and evolve the system toward higher scalability and maintainability</span>
+              <span>Partnered with SRE and security teams to enforce IAM least-privilege access, private networking for endpoints, container image scanning, and secrets management via AWS Secrets Manager</span>
+            </div>
+            <div className="flex gap-2 items-start text-neutral-700 dark:text-neutral-300 text-sm">
+              <Trophy className="w-4 h-4 mt-1 text-primary flex-shrink-0" />
+              <span>Conducted root-cause analysis on inference latency regressions and traffic anomalies, defining SLIs/SLOs for ML services aligned with platform reliability goals</span>
             </div>
           </div>
 
-          {/* <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             <Image
               src="/images/Nike-Ops.png"
-              alt="Ayumetrix AI Agent Platform Architecture"
+              alt="Nike ML Pipeline Architecture"
               width={500}
               height={300}
               className="rounded-lg object-cover h-20 md:h-32 lg:h-40 w-full shadow-lg"
             />
-          </div> */}
+          </div>
         </div>
       ),
     },

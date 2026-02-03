@@ -12,14 +12,22 @@ import { motion } from 'framer-motion'
 import { Mail, MapPin, Phone, Download, Linkedin, Code, Cloud, Database, Sun, Moon } from 'lucide-react'
 
 export default function Home() {
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (typeof window === 'undefined') return 'light';
-    const stored = window.localStorage.getItem('theme');
-    if (stored === 'dark' || stored === 'light') return stored as 'light' | 'dark';
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  });
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+    const stored = window.localStorage.getItem('theme');
+    if (stored === 'dark' || stored === 'light') {
+      setTheme(stored as 'light' | 'dark');
+      return;
+    }
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
     const root = document.documentElement;
     if (theme === 'dark') {
       root.classList.add('dark');
@@ -27,7 +35,7 @@ export default function Home() {
       root.classList.remove('dark');
     }
     window.localStorage.setItem('theme', theme);
-  }, [theme]);
+  }, [theme, isMounted]);
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
@@ -81,13 +89,13 @@ export default function Home() {
           className="fixed top-4 right-4 flex items-center gap-2 rounded-full border border-slate-200/70 dark:border-slate-700/70 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-3 py-2 shadow-md transition hover:shadow-lg"
           style={{ pointerEvents: 'auto' }}
         >
-          {theme === 'dark' ? (
+          {isMounted && theme === 'dark' ? (
             <Sun size={18} className="text-amber-400" />
           ) : (
             <Moon size={18} className="text-slate-600" />
           )}
           <span className="text-sm font-medium text-slate-800 dark:text-slate-200">
-            {theme === 'dark' ? 'Light' : 'Dark'} mode
+            {isMounted && theme === 'dark' ? 'Light' : 'Dark'} mode
           </span>
         </button>
         <NavBarDemo />
@@ -248,29 +256,52 @@ export default function Home() {
               </h2>
               <span className="hidden sm:block h-px w-40 bg-slate-200 dark:bg-slate-700" />
             </div>
-            <div className="space-y-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              <p>
-                ML/DevOps Engineer who builds and runs secure, cloud-native ML platforms end-to-end—covering data pipelines,
-                training, model serving, and observability. I specialize in AWS, SageMaker, containerized services, and
-                GitLab CI/CD to deliver reproducible, compliant ML systems.
-              </p>
-              <p>
-                Recent work: at Ayumetrix I designed and built a Python-based AI agent platform on AWS for intelligent
-                decisioning, personalization, and real-time recommendations. I implemented agent-driven workflows for
-                training, inference, feature freshness checks, and automated retraining; built orchestration services
-                across embedding, retrieval, ranking, and response composition; deployed Dockerized services on ECS/
-                SageMaker; and shipped CI/CD with safe rollouts. I integrated IAM, S3, VPC, CloudWatch, and Secrets Manager,
-                established metrics/logs/traces, and defined SLI/SLOs with root-cause analysis on latency and reliability.
-                At Core Defender AI I operated a HIPAA-grade ML and analytics platform ingesting HL7, with Airflow and Step
-                Functions pipelines, drift-aware retraining on ECS, MLflow tracking, dataset versioning, and strict PHI
-                isolation with IAM, KMS, private networking, and secrets management.
-              </p>
-              <p>
-                Strengths: CI/CD guardrails, IaC, SLI/SLO design, model and data drift detection, feature stores, monitoring
-                (Datadog/CloudWatch), and incident-ready runbooks. Comfortable partnering with Data Science, SRE, and
-                Security to ship reliable ML features for regulated domains.
-              </p>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="mt-12 space-y-6"
+            >
+              <motion.div 
+                className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border-l-4 border-slate-300 dark:border-slate-600 p-6 rounded-lg"
+                whileHover={{ scale: 1.02, x: 5 }}
+                transition={{ duration: 0.3 }}
+              >
+                <p className="text-lg text-slate-700 dark:text-slate-200 leading-relaxed">
+                  ML/DevOps Engineer who builds and runs <span className="font-semibold">secure, cloud-native ML platforms end-to-end</span>—covering data pipelines,
+                  training, model serving, and observability. I specialize in AWS, SageMaker, containerized services, and
+                  GitLab CI/CD to deliver reproducible, compliant ML systems.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border-l-4 border-slate-300 dark:border-slate-600 p-6 rounded-lg"
+                whileHover={{ scale: 1.02, x: 5 }}
+                transition={{ duration: 0.3 }}
+              >
+                <p className="text-lg text-slate-700 dark:text-slate-200 leading-relaxed">
+                  <span className="font-semibold">Recent work:</span> at Nike I built a production personalization platform with embedding pipelines, OpenSearch kNN
+                  retrieval, SageMaker real-time endpoints (p95 {'<'} 150 ms), feature stores, and staged promotions with canary/
+                  shadow deploys plus Datadog and CloudWatch observability. At Core Defender AI I operated a HIPAA-grade ML and
+                  analytics platform ingesting HL7, with Airflow and Step Functions pipelines, drift-aware retraining on ECS,
+                  MLflow tracking, dataset versioning, and strict PHI isolation with IAM, KMS, private networking, and
+                  secrets management.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border-l-4 border-slate-300 dark:border-slate-600 p-6 rounded-lg"
+                whileHover={{ scale: 1.02, x: 5 }}
+                transition={{ duration: 0.3 }}
+              >
+                <p className="text-lg text-slate-700 dark:text-slate-200 leading-relaxed">
+                  <span className="font-semibold">Core strengths:</span> CI/CD guardrails, Infrastructure-as-Code, SLI/SLO design, model and data drift detection, feature stores, monitoring
+                  (Datadog/CloudWatch), and incident-ready runbooks. Comfortable partnering with Data Science, SRE, and
+                  Security to ship reliable ML features for regulated domains.
+                </p>
+              </motion.div>
+            </motion.div>
             <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 {
@@ -599,13 +630,6 @@ export default function Home() {
 
             <div className="flex justify-center gap-4">
               <AnimatedButton
-                href="mailto:likith@likith.net"
-                icon={<Mail size={18} />}
-              >
-                Send Email
-              </AnimatedButton>
-
-              <AnimatedButton
                 onClick={handleDownload}
                 icon={<Download size={18} />}
               >
@@ -619,7 +643,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 px-4 bg-slate-900/80 dark:bg-slate-900/90 backdrop-blur-sm text-slate-300 border-t border-white/10 dark:border-slate-700/20 relative z-50">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="mb-4">© 2025 Likith Nadendla. All rights reserved.</p>
+          <p className="mb-4">© {new Date().getFullYear()} Likith Nadendla. All rights reserved.</p>
           <div className="flex justify-center gap-6" style={{ position: 'relative', zIndex: 50, pointerEvents: 'auto' }}>
             <a href="https://linkedin.com/in/nadendla-likith" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-pointer" style={{ zIndex: 50, position: 'relative', pointerEvents: 'auto' }}>
               <Linkedin size={20} />
