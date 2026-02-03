@@ -5,6 +5,18 @@ export function FluidShaderBackground() {
     <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
       {/* Base fluid gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950 pointer-events-none" />
+
+      {/* Aurora layer (animated, layout-safe) */}
+      <div
+        className="absolute inset-0 opacity-40 dark:opacity-30 pointer-events-none aurora-flow"
+        style={{
+          backgroundImage: `
+            radial-gradient(60% 50% at 20% 30%, rgba(99, 102, 241, 0.18) 0%, transparent 60%),
+            radial-gradient(50% 60% at 80% 40%, rgba(14, 165, 233, 0.16) 0%, transparent 60%),
+            radial-gradient(70% 50% at 50% 80%, rgba(139, 92, 246, 0.14) 0%, transparent 60%)
+          `
+        }}
+      />
       
       {/* Flowing animated layers */}
       <div className="absolute inset-0 pointer-events-none">

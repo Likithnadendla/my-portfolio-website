@@ -183,10 +183,21 @@
   }
 }
 
+@keyframes auroraFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .animate-moveGradient {
   animation: moveGradient 15s ease-in-out infinite;
 }
 
 .animate-moveGradientReverse {
   animation: moveGradientReverse 20s ease-in-out infinite;
+}
+
+.aurora-flow {
+  background-size: 200% 200%;
+  animation: auroraFlow 30s ease-in-out infinite;
 }
